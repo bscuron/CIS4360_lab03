@@ -91,3 +91,17 @@ To create the pod, I used the `kubectl create` command.
 After creating the pod, I viewed both the deployment and the pod created using `kubectl get deployments` and `kubectl get pods`
 
 [[./images/ss18.png]]
+
+** Task 5. Allow external traffic
+
+Currently, the pod is only accessible by its internal IP address. To make it accessible to outside users, we must expose the pod as a Kubernetes service. To do this, I used the `kubectl expose` command.
+
+[[./images/ss19.png]]
+
+To find the public IP address of the newly created service, we can run `kubectl get services`.
+
+[[./images/ss20.png]]
+
+As you can see, the external IP address (load-balancer IP) is 34.135.101.188. This means, that if we navigate to port 8080 at that address, we should see our "Hello World!" message.
+
+[[./images/ss21.png]]
