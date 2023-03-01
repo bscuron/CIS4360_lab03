@@ -123,3 +123,23 @@ Next, I listed all of the pods.
 Here is a diagram that I found useful in understanding Kubernetes clusters.
 
 [[./images/ss25.png]]
+
+** Task 7. Roll out an upgrade to your service
+
+Now, we want to try to modify our application without disrupting the user experience. To do this, I first updated our `server.js` file located on the GCP console to display a new message. Here is the updated contents of the `server.js` file. My cursor is on the only line that was updated.
+
+[[./images/ss26.png]]
+
+Next, we must build a new image with the updated `server.js` contents and publish the newly built image. This is shown below. These two steps were very fast due to caching. Kubernetes will smoothly update your replication controller to the new version of the application.
+
+[[./images/ss27.png]]
+
+To change the image label for your running container, we can edit the current deployment. This is shown below. In the yaml file, we update Spec > containers > image and change the version number to v2.
+
+[[./images/ss28.png]]
+
+[[./images/ss29.png]]
+
+To update the deployment with the new image the following command is ran. New pods will be created with the new image and the old pods will be deleted.
+
+[[./images/ss30.png]]
