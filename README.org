@@ -1,1 +1,21 @@
 * Lab 03 - Hello Kubernetes Node
+
+** Task 1. Create your Node.js application
+
+The first thing that I did was create a JavaScript file named `server.js`. I created the file using `vim`.
+
+[[./images/ss1.png]]
+
+To add contents to the file, I entered insert mode by pressing `i` and pasted the JS contents into the file. I then wrote and quit by pressing `<ESC>` to enter normal mode, and `:wq` to write and quit.
+
+[[./images/ss2.png]]
+
+I then ran the JS file using Node.js. The command does not produce any output, but it does start a webserver on port 8080.
+
+[[./images/ss3.png]]
+
+I navigated to this web server using the GCP console feature: `Web preview`. From this preview, I can see the "Hello World!" message that was located in the `server.js` file.
+
+[[./images/ss4.png]]
+
+I then sent a SIGINT signal to the process by pressing `CTRL-c`. This interrupted the process.
