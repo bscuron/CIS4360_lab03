@@ -19,3 +19,47 @@ I navigated to this web server using the GCP console feature: `Web preview`. Fro
 [[./images/ss4.png]]
 
 I then sent a SIGINT signal to the process by pressing `CTRL-c`. This interrupted the process.
+
+** Task 2. Create a Docker container image
+
+Next, I created a `Dockerfile` to give instructions for the image I want to build. I used `vim` to create this file. The process is the same as when creating the `server.js` file previously.
+
+[[./images/ss5.png]]
+
+[[./images/ss6.png]]
+
+The `Dockerfile` that was just created will 'extend' the node image specified on the first line. Additionally, the `Dockerfile` will expose port 8080 (the same port specified in `server.js`), copy the contents of `server.js` into the image. The CMD specified in the `Dockerfile` just states that we will run the `server.js` program with Node.js.
+
+After specifying the `Dockerfile`, I built the image using `docker build`.
+
+[[./images/ss7.png]]
+
+During this process, all dependencies were downloaded from the `Docker Hub`. The image was successfully built.
+
+After building, I then ran the image using the as a daemon on port 8080.
+
+[[./images/ss8.png]]
+
+To ensure that the image was running, I used `curl` to check the output.
+
+[[./images/ss9.png]]
+
+As expected, the "Hello World!" message was displayed.
+
+Next, I had to stop the running container. To do this, I first had to find out the container's ID. I used the `docker ps` command to find this information.
+
+[[./images/ss10.png]]
+
+As you can see, the container ID is "ea941eb3e9a6". With this information, we can now stop the running container. To do this, I used the `docker stop [container ID]` command. I also checked that this command succeeded by running `docker ps` again.
+
+[[./images/ss11.png]]
+
+I successfully stopped the running container.
+
+Now that the container was working locally, I wanted to push it to the `Google Cloud Registry`. To do so, I used the `docker push` command.
+
+*NOTE:* at this point, I realized I was using the wrong google account. So, I switched to my school account and re-did all of the previous steps. The only thing different is the <PROJECT ID>.
+
+[[./images/ss12.png]]
+
+[[./images/ss13.png]]
