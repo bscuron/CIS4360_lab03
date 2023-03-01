@@ -63,3 +63,19 @@ Now that the container was working locally, I wanted to push it to the `Google C
 [[./images/ss12.png]]
 
 [[./images/ss13.png]]
+
+** Task 3. Create your cluster
+
+Next step is to create my Kubernetes Engine cluster. A cluster consists of a Kubernetes master API server hosted by Google and a set of worker nodes. The worker nodes are Compute Engine virtual machines.
+
+First, I made sure that my <PROJECT ID> was configured correctly. Which should already be OK. Just wanted to double check.
+
+[[./images/ss14.png]]
+
+Next, I created a cluster with two n1-standard-1 nodes. For this step, I first had to enable the Kubernetes Engine API in GCP.
+
+[[./images/ss15.png]]
+
+After waiting for a while, I was able to successfully create the cluster.
+
+[[./images/ss16.png]]
