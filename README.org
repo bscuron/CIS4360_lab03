@@ -105,3 +105,21 @@ To find the public IP address of the newly created service, we can run `kubectl 
 As you can see, the external IP address (load-balancer IP) is 34.135.101.188. This means, that if we navigate to port 8080 at that address, we should see our "Hello World!" message.
 
 [[./images/ss21.png]]
+
+** Task 6. Scale up your service
+
+Kubernetes has the ability to easily scale. We can set the number of replicas for our pod. This was done using the `kubectl scale` command.
+
+[[./images/ss22.png]]
+
+To check that this worked as intended, we can request a description of our deployment.
+
+[[./images/ss23.png]]
+
+Next, I listed all of the pods.
+
+[[./images/ss24.png]]
+
+Here is a diagram that I found useful in understanding Kubernetes clusters.
+
+[[./images/ss25.png]]
