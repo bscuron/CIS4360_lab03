@@ -36,7 +36,7 @@ After specifying the `Dockerfile`, I built the image using `docker build`.
 
 During this process, all dependencies were downloaded from the `Docker Hub`. The image was successfully built.
 
-After building, I then ran the image using the as a daemon on port 8080.
+After building, I then ran the image using the daemon on port 8080.
 
 [[./images/ss8.png]]
 
@@ -143,3 +143,11 @@ To change the image label for your running container, we can edit the current de
 To update the deployment with the new image the following command is ran. New pods will be created with the new image and the old pods will be deleted.
 
 [[./images/ss30.png]]
+
+** Task 8. Test your knowledge
+
+Which of the following are features of the Kubernetes Engine?:
+- [X] Integrated Logging and Monitoring
+- [X] Stateful Application Support
+- [ ] None of these
+- [X] Identity and Access Management
