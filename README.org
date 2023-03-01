@@ -79,3 +79,15 @@ Next, I created a cluster with two n1-standard-1 nodes. For this step, I first h
 After waiting for a while, I was able to successfully create the cluster.
 
 [[./images/ss16.png]]
+
+** Task 4. Create your pod
+
+Next, I created a Kubernetes pod. A Kubernetes pod is a group of containers tied together for administration and networking purposes. It can contain single or multiple containers. The container we will use is the one container built with my Node.js image stored in my private container registry. It will serve content on port 8080.
+
+To create the pod, I used the `kubectl create` command.
+
+[[./images/ss17.png]]
+
+After creating the pod, I viewed both the deployment and the pod created using `kubectl get deployments` and `kubectl get pods`
+
+[[./images/ss18.png]]
